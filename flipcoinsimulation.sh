@@ -2,9 +2,9 @@ heads=1
 tails=2
 heads_count=0
 tails_count=0
+final_count=21
 echo "Welcome to flip coin simulation"
-echo "Let flip the coin 50 times"
-for (( i=1 ; i <= 50 ; i++ ))
+while [[ $final_count -gt $heads_count && $final_count -gt $tails_count ]]
 do
 	result=$(( $RANDOM % 2 +1))
 	if [[ $result -eq $heads ]]
@@ -14,5 +14,22 @@ do
 		tails_count=$(($tails_count + 1 ))
 	fi
 done
-echo "$heads_count times head won"
-echo "$tails_count times tail won"
+echo "Heads count $heads_count"
+echo "Tails count $tails_count"
+if [ $heads_count -eq $final_count ]
+then
+	echo "Heads is the winner"
+	diff=$(($heads_count - $tails_count))
+	echo "Heads win by $diff"
+elif [ $tails_count -eq $final_count ]
+then
+	echo "Tails is the winner"
+	diff=$(($tails_count - $heads_count))
+        echo "Tails win by $diff"
+elif [ $tails_count -eq $heads_count]
+then
+	echo "It's a tie"
+else
+	echo "Unpredictable result"
+fi
+
