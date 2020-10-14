@@ -1,0 +1,7 @@
+Exception: STATUS_STACK_OVERFLOW at eip=61122427
+eax=00000000 ebx=611E2084 ecx=20000008 edx=00000001 esi=00042F88 edi=00042F84
+ebp=00000000 esp=00042F70 program=E:\Git\usr\bin\bash.exe, pid 1847, thread 
+cs=001B ds=0023 es=0023 fs=003B gs=0000 ss=0023
+Stack trace:
+Frame     Function  Args
+End of stack trace
