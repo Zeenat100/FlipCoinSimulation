@@ -33,7 +33,7 @@ function toss_result
 	then
 		echo "It's a tie"
 		diff=0
-        	while [[ $diff -lt 2 ]]
+        	while [[ $diff -le 2 ]]
       		do
 			toss
 			toss_result
